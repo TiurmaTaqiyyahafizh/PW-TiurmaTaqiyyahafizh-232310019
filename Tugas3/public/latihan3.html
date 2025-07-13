@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perhitungan Faktorial dan Deret</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            display: flex; /* Untuk menengahkan container secara vertikal dan horizontal */
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh; /* Agar container di tengah layar */
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 450px; /* Lebar disesuaikan dengan contoh gambar */
+            margin: auto; /* Memastikan margin otomatis untuk centering jika display flex tidak penuh */
+            /* text-align: center; Dihapus karena h2 akan center otomatis */
+        }
+        h2 {
+            text-align: center; /* Pastikan judul di tengah */
+            color: #333;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #e0e0e0;
+            color: #333;
+        }
+        input[type="number"], input[type="text"] {
+            width: calc(100% - 22px); /* Menyesuaikan lebar input agar pas dengan padding dan border */
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box; /* Penting agar padding dan border tidak menambah lebar total */
+            font-size: 16px;
+        }
+        input[type="text"][readonly] {
+            background-color: #f0f0f0;
+            color: #555;
+        }
+        .button-group {
+            text-align: right; /* Untuk menempatkan tombol di kanan */
+            vertical-align: top; /* Penting agar tombol sejajar dengan input di kiri */
+            padding-top: 10px; /* Sedikit padding atas agar tidak terlalu mepet */
+        }
+        .button-group button {
+            padding: 8px 15px; /* Mengurangi padding agar tombol lebih kompak */
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 15px; /* Sedikit lebih kecil */
+            margin-left: 10px;
+            margin-bottom: 8px; /* Jarak antar tombol */
+            width: 80px; /* Berikan lebar tetap agar ukurannya sama */
+        }
+        button[type="submit"] {
+            background-color: #007bff;
+            color: white;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        button[type="reset"] {
+            background-color: #dc3545;
+            color: white;
+        }
+        button[type="reset"]:hover {
+            background-color: #c82333;
+        }
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 5px;
+            display: none;
+            text-align: left;
+            padding-left: 10px; /* Sesuaikan dengan padding tabel */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Perhitungan Faktorial dan Deret</h2>
+        <form id="calculatorForm">
+            <table>
+                <tr>
+                    <td>N</td>
+                    <td>
+                        <input type="number" id="inputN" name="inputN" min="0" required>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: center; font-weight: bold;">Hasil</td>
+                </tr>
+                <tr>
+                    <td>Faktorial</td>
+                    <td>
+                        <input type="text" id="outputFaktorial" readonly>
+                    </td>
+                    <td class="button-group" rowspan="2">
+                        <button type="submit">Submit</button><br>
+                        <button type="reset">Reset</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Jumlah</td>
+                    <td>
+                        <input type="text" id="outputJumlahDeret" readonly>
+                    </td>
+                </tr>
+            </table>
+            <div class="error-message" id="inputNError">Masukkan bilangan bulat non-negatif.</div>
+        </form>
+    </div>
+
+    <script>
+        // ... (kode JavaScript sama seperti sebelumnya) ...
+        document.getElementById('calculatorForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('inputNError').style.display = 'none';
+            const N = parseInt(document.getElementById('inputN').value);
+
+            if (isNaN(N) || N < 0) {
+                document.getElementById('inputNError').style.display = 'block';
+                document.getElementById('outputFaktorial').value = '';
+                document.getElementById('outputJumlahDeret').value = '';
+                return;
+            }
+
+            let faktorial = 1;
+            if (N === 0) {
+                faktorial = 1;
+            } else {
+                for (let i = 1; i <= N; i++) {
+                    faktorial *= i;
+                }
+            }
+            document.getElementById('outputFaktorial').value = faktorial.toLocaleString('id-ID');
+
+            let jumlahDeret = 0;
+            for (let i = 1; i <= N; i++) {
+                jumlahDeret += i;
+            }
+            document.getElementById('outputJumlahDeret').value = jumlahDeret.toLocaleString('id-ID');
+        });
+
+        document.getElementById('calculatorForm').addEventListener('reset', function() {
+            document.getElementById('outputFaktorial').value = '';
+            document.getElementById('outputJumlahDeret').value = '';
+            document.getElementById('inputNError').style.display = 'none';
+        });
+    </script>
+
+</body>
+</html>

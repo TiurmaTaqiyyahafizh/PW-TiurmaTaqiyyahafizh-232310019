@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan HTML 6 - Daftar Isi & Link Target</title>
+    <style>
+        /* Styling dasar biar halaman enak dibaca */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 800px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #333;
+            margin-top: 2em; /* Kasih jarak atas biar nggak terlalu mepet */
+            padding-top: 10px; /* Padding atas buat jaga-jaga kalau ada sticky header di masa depan */
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .section-header {
+            background-color: #e0e0e0;
+            padding: 10px;
+            border-left: 5px solid #007bff;
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 1em;
+            text-align: justify;
+        }
+        ul.daftar-isi {
+            list-style: none; /* Hilangin bullet default */
+            padding: 0;
+            background-color: #e6f2ff; /* Warna latar belakang untuk daftar isi */
+            border: 1px solid #b3d9ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 40px;
+        }
+        ul.daftar-isi li {
+            margin-bottom: 8px;
+        }
+        ul.daftar-isi li a {
+            color: #0056b3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        ul.daftar-isi li a:hover {
+            text-decoration: underline;
+            color: #007bff;
+        }
+        .language-description {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 25px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+        .language-description h3 {
+            margin-top: 0;
+            color: #007bff;
+        }
+        .link-targets {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px dashed #ccc;
+        }
+        .link-targets ul {
+            list-style: decimal; /* Pakai angka buat list ini */
+            padding-left: 20px;
+        }
+        .link-targets li {
+            margin-bottom: 10px;
+        }
+        .link-targets a {
+            color: #28a745; /* Warna hijau biar beda dari link biasa */
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .link-targets a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Top 10 Daftar Bahasa Pemrograman</h1>
+
+    <h2 class="section-header">Daftar Isi:</h2>
+    <ul class="daftar-isi">
+        <li><a href="#python_section">Python</a></li>
+        <li><a href="#javascript_section">JavaScript</a></li>
+        <li><a href="#java_section">Java</a></li>
+        <li><a href="#csharp_section">C#</a></li>
+        <li><a href="#c_section">C</a></li>
+        <li><a href="#cpp_section">C++</a></li>
+        <li><a href="#go_section">Go</a></li>
+        <li><a href="#r_section">R</a></li>
+        <li><a href="#swift_section">Swift</a></li>
+        <li><a href="#php_section">PHP</a></li>
+    </ul>
+
+    <p>
+        Ini adalah halaman Latihan 6, di mana saya akan mencoba membuat daftar isi yang interaktif.
+        Jadi, kalau klik salah satu nama bahasa pemrograman di atas, dia langsung loncat ke bagian deskripsinya di bawah.
+        Seru banget nih, bisa bikin navigasi di dalam halaman yang sama!
+    </p>
+
+    <div class="language-description" id="python_section">
+        <h3>Python</h3>
+        <p>
+            Python adalah bahasa pemrograman serbaguna yang sangat populer, dikenal karena sintaksisnya yang bersih dan mudah dibaca.
+            Banyak digunakan dalam pengembangan web (dengan framework seperti Django dan Flask), analisis data,
+            machine learning, kecerdasan buatan, otomatisasi, dan scripting.
+            Python juga sangat ramah bagi pemula, menjadikannya pilihan ideal untuk belajar coding pertama kali.
+        </p>
+    </div>
+
+    <div class="language-description" id="javascript_section">
+        <h3>JavaScript</h3>
+        <p>
+            JavaScript adalah bahasa pemrograman inti untuk pengembangan web sisi klien (frontend),
+            memungkinkan interaktivitas di browser web. Dengan adanya Node.js, JavaScript juga bisa digunakan untuk
+            pengembangan sisi server (backend), menjadikannya bahasa "full-stack".
+            Kerangka kerja (framework) seperti React, Angular, dan Vue.js sangat populer di ekosistem JavaScript.
+        </p>
+    </div>
+
+    <div class="language-description" id="java_section">
+        <h3>Java</h3>
+        <p>
+            Java adalah bahasa pemrograman berorientasi objek yang kuat dan platform-independent ("Write Once, Run Anywhere").
+            Sangat banyak digunakan untuk pengembangan aplikasi enterprise skala besar, aplikasi Android,
+            aplikasi desktop, dan sistem back-end yang performa tinggi. Komunitasnya sangat besar dan ekosistemnya matang.
+        </p>
+    </div>
+
+    <div class="language-description" id="csharp_section">
+        <h3>C#</h3>
+        <p>
+            C# (dibaca "C sharp") adalah bahasa pemrograman berorientasi objek yang dikembangkan oleh Microsoft,
+            dirancang untuk platform .NET. Ini adalah bahasa pilihan untuk mengembangkan aplikasi Windows (desktop, web, mobile),
+            game dengan Unity, dan layanan back-end. C# memiliki sintaksis yang mirip dengan Java dan C++.
+        </p>
+    </div>
+
+    <div class="language-description" id="c_section">
+        <h3>C</h3>
+        <p>
+            C adalah bahasa pemrograman tingkat menengah yang sangat fundamental.
+            Meskipun lebih tua, C masih sangat relevan untuk pemrograman sistem, pengembangan OS (seperti kernel Linux),
+            firmware, dan game engine karena performanya yang sangat tinggi dan kontrol langsung terhadap hardware.
+        </p>
+    </div>
+
+    <div class="language-description" id="cpp_section">
+        <h3>C++</h3>
+        <p>
+            C++ adalah ekstensi dari bahasa C, menambahkan fitur berorientasi objek.
+            Ini adalah bahasa yang sangat powerful dan performa tinggi, banyak digunakan dalam pengembangan game,
+            aplikasi desktop, sistem real-time, perangkat lunak sistem, dan embedded systems.
+            C++ menawarkan kontrol tingkat rendah dan abstraksi tingkat tinggi.
+        </p>
+    </div>
+
+    <div class="language-description" id="go_section">
+        <h3>Go</h3>
+        <p>
+            Go (atau Golang) adalah bahasa pemrograman open source yang dikembangkan oleh Google.
+            Dikenal karena konkurensinya yang efisien (goroutine), performa tinggi, dan sintaksis yang sederhana.
+            Go sangat cocok untuk pengembangan sistem jaringan, microservices, cloud computing, dan alat-alat command-line.
+        </p>
+    </div>
+
+    <div class="language-description" id="r_section">
+        <h3>R</h3>
+        <p>
+            R adalah bahasa dan lingkungan untuk komputasi statistik dan grafis.
+            Sangat populer di kalangan ilmuwan data, statistikawan, dan peneliti untuk analisis data,
+            visualisasi, dan pengembangan model statistik. R memiliki banyak paket yang kaya fitur untuk berbagai tugas analisis.
+        </p>
+    </div>
+
+    <div class="language-description" id="swift_section">
+        <h3>Swift</h3>
+        <p>
+            Swift adalah bahasa pemrograman yang dikembangkan oleh Apple untuk iOS, macOS, watchOS, dan tvOS.
+            Dirancang agar cepat, aman, dan modern, Swift menjadi pilihan utama untuk mengembangkan aplikasi di ekosistem Apple.
+            Sintaksisnya modern dan mudah dibaca.
+        </p>
+    </div>
+
+    <div class="language-description" id="php_section">
+        <h3>PHP</h3>
+        <p>
+            PHP adalah bahasa scripting sisi server yang banyak digunakan untuk pengembangan web.
+            Ini adalah tulang punggung dari banyak website dinamis dan sistem manajemen konten (CMS) populer seperti WordPress.
+            PHP terus berkembang dengan versi-versi baru yang menawarkan peningkatan performa dan fitur.
+        </p>
+    </div>
+
+    <p style="margin-top: 50px;">
+        Wah, akhirnya deskripsi setiap bahasanya juga sudah siap. Sekarang semua link di daftar isi di atas
+        sudah bisa langsung mengarahkan ke bagian ini. Keren banget fitur anchor link ini!
+    </p>
+
+    <h2 class="section-header link-targets">Coba Link dengan Target Berbeda</h2>
+    <p>
+        Sekarang saya mau coba fitur link yang bisa membuka halaman di tempat yang beda-beda.
+        Ada `_self` (default), `_blank` (tab baru), dan `_parent` (parent frame).
+    </p>
+    <ul>
+        <li>
+            1) Link ke Latihan 4: Ini harusnya membuka dokumen Latihan 4 di tab yang sama (target `_self` itu default).
+            <a href="latihan4.html" target="_self">Go to Latihan-4</a>
+        </li>
+        <li>
+            2) Link ke Latihan 5: Ini harusnya membuka dokumen Latihan 5 di tab baru (target `_blank`).
+            <a href="latihan5.html" target="_blank">Go to Latihan-5</a>
+        </li>
+        <li>
+            3) Link ke URL Luar: Ini harusnya membuka URL Wikipedia. Karena tidak ada parent frame, ini akan bertindak mirip `_self` atau `_top`. Kalau halaman ini di dalam iframe, dia akan buka di parent frame.
+            <a href="https://en.wikipedia.org/wiki/Web_programming" target="_parent">Go to URL Wikipedia (Web Programming)</a>
+        </li>
+    </ul>
+
+    <p>
+        Oke, semua latihan HTML dasar dari modul ini sudah saya selesaikan!
+        Mulai dari typography, gambar, tabel, artikel kompleks, anchor link, sampai link dengan target berbeda.
+        Banyak banget yang dipelajari dan dicoba. Sekarang jadi lebih ngerti gimana HTML itu kerja.
+        Siap buat langkah selanjutnya!
+    </p>
+
+</body>
+</html>

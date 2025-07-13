@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan HTML 7 - Membuat Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 600px; /* Biar formnya nggak terlalu lebar */
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 30px;
+        }
+        form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 20px; /* Jarak antar grup input */
+        }
+        .form-group label {
+            display: block; /* Label di baris baru */
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="password"],
+        .form-group input[type="date"],
+        .form-group textarea {
+            width: calc(100% - 20px); /* Lebar input field, dikurangi padding */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+            box-sizing: border-box; /* Agar padding tidak menambah lebar total */
+        }
+        .form-group input[type="radio"] {
+            margin-right: 5px;
+        }
+        .form-group.radio-group label {
+            display: inline-block; /* Label radio biar sejajar */
+            margin-right: 15px;
+            font-weight: normal; /* Label radio tidak terlalu tebal */
+        }
+        .form-actions {
+            text-align: right; /* Tombol rata kanan */
+            margin-top: 30px;
+        }
+        .form-actions button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-left: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .form-actions button[type="submit"] {
+            background-color: #28a745; /* Warna hijau untuk Submit */
+            color: white;
+        }
+        .form-actions button[type="submit"]:hover {
+            background-color: #218838;
+        }
+        .form-actions button[type="reset"] {
+            background-color: #dc3545; /* Warna merah untuk Clear/Reset */
+            color: white;
+        }
+        .form-actions button[type="reset"]:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Formulir Pendaftaran Sederhana</h1>
+    <p>
+        Oke, sekarang saya mau coba bikin form HTML! Ini penting banget buat ngumpulin data dari user.
+        Ada berbagai macam input field yang harus dicoba, dari teks, email, sampai tanggal dan radio button.
+        Semoga nggak ada yang kelupaan!
+    </p>
+
+    <form action="#" method="post">
+        <div class="form-group">
+            <label for="npm">NPM (Input Text):</label>
+            <input type="text" id="npm" name="npm" placeholder="Masukkan NPM Anda" required>
+            </div>
+
+        <div class="form-group">
+            <label for="fullname">Fullname (Input Text):</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Nama Lengkap Anda" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email (Input Email):</label>
+            <input type="email" id="email" name="email" placeholder="contoh@domain.com" required>
+            </div>
+
+        <div class="form-group">
+            <label for="password">Password (Input Password):</label>
+            <input type="password" id="password" name="password" placeholder="Min. 8 karakter" required>
+            </div>
+
+        <div class="form-group">
+            <label for="birthplace">Place Birth (Input Text):</label>
+            <input type="text" id="birthplace" name="birthplace" placeholder="Kota Kelahiran Anda" required>
+        </div>
+
+        <div class="form-group">
+            <label for="birthdate">Birthdate (Input Date):</label>
+            <input type="date" id="birthdate" name="birthdate" required>
+            </div>
+
+        <div class="form-group radio-group">
+            <label>Gender (Radio Button):</label>
+            <input type="radio" id="male" name="gender" value="male" required>
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+            </div>
+
+        <div class="form-group">
+            <label for="address">Address (Textarea):</label>
+            <textarea id="address" name="address" rows="5" placeholder="Alamat Lengkap Anda" required></textarea>
+            </div>
+
+        <div class="form-actions">
+            <button type="reset" name="clear_button">Clear</button>
+            <button type="submit" name="submit_button">Save</button>
+            </div>
+    </form>
+
+    <p style="margin-top: 30px;">
+        Oke, formnya sudah jadi! Lumayan banyak juga ya input field-nya.
+        Penting nih ingat atribut `type`, `id`, `name`, dan `placeholder`.
+        Terus `required` juga berguna buat validasi dasar.
+        Sekarang tinggal latihan layout portofolio. Pasti lebih kompleks lagi!
+    </p>
+
+</body>
+</html>

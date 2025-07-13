@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Latihan 1 - Ucapan Selamat</title>
+</head>
+<body>
+
+<script>
+  // Dapatkan jam saat ini
+  const currentHour = new Date().getHours();
+
+  
+  let greeting;
+  if (currentHour >= 5 && currentHour < 12) {
+    greeting = "Selamat Pagi!"; // Jam 5 pagi sampai sebelum jam 12 siang
+  } else if (currentHour >= 12 && currentHour < 18) {
+    greeting = "Selamat Siang!"; // Jam 12 siang sampai sebelum jam 6 sore
+  } else {
+    greeting = "Selamat Malam!"; // Jam 6 sore sampai sebelum jam 5 pagi
+  }
+
+ 
+  alert(greeting);
+</script>
+
+</body>
+</html>

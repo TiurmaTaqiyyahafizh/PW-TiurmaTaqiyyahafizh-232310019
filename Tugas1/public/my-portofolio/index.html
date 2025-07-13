@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolioku - Tiurma Taqiyyahafizh</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eef2f5; /* Warna latar belakang halaman */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Pastikan body setidaknya setinggi viewport */
+        }
+        header {
+            background-color: #3f51b5; /* Warna header biru tua */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            margin: 5px 0 0;
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        nav {
+            background-color: #5c6bc0; /* Warna navigasi lebih muda */
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            margin: 0 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #7986cb;
+        }
+        .container {
+            flex: 1; /* Konten utama akan mengisi sisa ruang vertikal */
+            padding: 30px 20px;
+            max-width: 960px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .profile-section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap; /* Agar responsif di layar kecil */
+        }
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* Bikin gambar bulat */
+            object-fit: cover;
+            margin-right: 30px;
+            border: 4px solid #3f51b5;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .profile-info h2 {
+            margin-top: 0;
+            color: #3f51b5;
+        }
+        .profile-info p {
+            font-size: 1.1em;
+        }
+        .skills-section h2, .projects-section h2, .contact-section h2 {
+            color: #3f51b5;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .skills-list li {
+            background-color: #e0f2f7;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            color: #2196f3;
+            font-weight: bold;
+        }
+        .project-item {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 6px;
+            background-color: #f9f9f9;
+        }
+        .project-item h3 {
+            margin-top: 0;
+            color: #3f51b5;
+        }
+        .project-item p {
+            font-size: 0.95em;
+        }
+        .contact-info {
+            line-height: 2;
+        }
+        .contact-info a {
+            color: #007bff;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Tiurma Taqiyyahafizh</h1>
+        <p>Pengembang Web | Mahasiswa | Pembelajar Antusias</p>
+    </header>
+
+    <nav>
+        <a href="#about">Tentang Saya</a>
+        <a href="#skills">Keahlian</a>
+        <a href="#projects">Proyek</a>
+        <a href="#contact">Kontak</a>
+        <a href="cv/cv.html">Lihat CV</a>
+        <a href="bio/bio.html">Baca Bio</a>
+    </nav>
+
+    <div class="container">
+        <section id="about" class="profile-section">
+            <img src="profile.jpg" alt="Foto Profil Saya" class="profile-image">
+            <div class="profile-info">
+                <h2>Halo, Saya Tiurma Taqiyyahafizh!</h2>
+                <p>
+                    Saya seorang mahasiswa Teknologi Informasi yang sangat tertarik pada pengembangan web.
+                    Saya bersemangat untuk belajar teknologi baru dan menciptakan solusi digital yang bermanfaat.
+                    Melalui serangkaian latihan HTML ini, saya semakin yakin bahwa membangun web itu seru dan menantang!
+                    Saya suka belajar hal baru dan siap berkontribusi dalam proyek-proyek menarik.
+                </p>
+                <p>
+                    Beberapa hal yang saya pelajari sejauh ini termasuk dasar-dasar HTML (tentu saja!),
+                    CSS untuk styling, dan sedikit tentang struktur project Laravel.
+                    Saya selalu mencari kesempatan untuk meningkatkan kemampuan dan mencoba teknologi terbaru.
+                </p>
+            </div>
+        </section>
+
+        <section id="skills" class="skills-section">
+            <h2>Keahlian Saya</h2>
+            <ul class="skills-list">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>Dasar-dasar JavaScript</li>
+                <li>Pengembangan Web Dasar</li>
+                <li>Laravel (Dasar)</li>
+                <li>Git & GitHub</li>
+                <li>Problem Solving</li>
+                <li>Belajar Cepat</li>
+            </ul>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <h2>Proyek-Proyek Kecilku</h2>
+            <div class="project-item">
+                <h3>Latihan HTML Dasar</h3>
+                <p>
+                    Mengerjakan serangkaian latihan HTML dari modul perkuliahan,
+                    meliputi pembuatan halaman dengan typography, gambar, tabel, form,
+                    hingga layout portofolio ini sendiri. Proyek ini membantu saya memahami
+                    dasar-dasar struktur dan elemen HTML.
+                </p>
+                <p><a href="latihan6.html" target="_blank">Lihat Contoh Latihan (Latihan 6)</a></p>
+            </div>
+            <div class="project-item">
+                <h3>Situs Web Sederhana (Konsep)</h3>
+                <p>
+                    Merancang layout sederhana untuk sebuah situs web statis menggunakan HTML dan CSS.
+                    Mencoba menerapkan konsep-konsep seperti header, navigasi, konten utama, dan footer
+                    untuk membangun struktur halaman yang rapi.
+                </p>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2>Hubungi Saya</h2>
+            <div class="contact-info">
+                <p>Email: <a href="mailto:tiurma.taqiyy@gmail.com">tiurma.taqiyy@gmail.com</a></p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/tiurma-taqiyyahafizh-07ba12327/" target="_blank">linkedin.com/in/tiurma-taqiyyahafizh-07ba12327/</a></p>
+                <p>GitHub: <a href="https://github.com/TiurmaTaqiyyahafizh" target="_blank">github.com/TiurmaTaqiyyahafizh</a></p>
+                <p>Lokasi: Bogor, Indonesia</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Tiurma Taqiyyahafizh. Semua Hak Dilindungi.</p>
+        <p>Dibuat dengan semangat belajar HTML!</p>
+    </footer>
+
+</body>
+</html>

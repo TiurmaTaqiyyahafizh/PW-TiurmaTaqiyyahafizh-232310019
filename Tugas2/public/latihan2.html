@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Hewan Dilindungi</title>
+    <style>
+        /* CSS akan ditulis di sini */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #0056b3;
+            margin-bottom: 40px;
+        }
+
+        .animal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .animal-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            text-align: center; /* Untuk teks di bawah gambar */
+        }
+
+        .animal-card img {
+            width: 100%;
+            height: 200px; /* Tinggi gambar agar seragam */
+            object-fit: cover; /* Menjaga aspek rasio dan mengisi ruang */
+            display: block;
+        }
+
+        .animal-card h2 {
+            font-size: 1.4em;
+            color: #333;
+            margin: 15px 10px 10px;
+        }
+
+        .animal-card p {
+            font-size: 0.9em;
+            line-height: 1.6;
+            padding: 0 15px 15px; /* Padding di bawah untuk deskripsi */
+            text-align: justify; /* Teks deskripsi rata kiri-kanan */
+            flex-grow: 1; /* Agar deskripsi memenuhi ruang yang tersedia */
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.85em;
+            color: #777;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .animal-grid {
+                grid-template-columns: 1fr; /* Untuk layar kecil, tampilkan 1 kolom */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Daftar Hewan Dilindungi</h1>
+
+        <div class="animal-grid">
+            <div class="animal-card">
+                <img src="images/orangutan.jpg" alt="Orang Utan">
+                <h2>Orang Utan</h2>
+                <p>Orang utan adalah kera besar asli hutan hujan tropis Sumatra dan Kalimantan. Mereka terancam punah akibat hilangnya habitat karena deforestasi. Memiliki rambut kemerahan dan lengan panjang, orang utan adalah satwa arboreal yang menghabiskan sebagian besar hidupnya di pohon.</p>
+            </div>
+
+            <div class="animal-card">
+                <img src="images/keraemas.jpg" alt="Kera Emas">
+                <h2>Kera Emas</h2>
+                <p>Monyet hidung pesek emas (Golden Snub-nosed Monkey) adalah spesies kera langka yang berasal dari pegunungan di China. Mereka dikenal dengan bulu emas yang indah dan hidung peseknya. Populasinya menurun drastis karena hilangnya habitat dan perburuan.</p>
+            </div>
+
+            <div class="animal-card">
+                <img src="images/burungcendrawasih.jpg" alt="Burung Cendrawasih">
+                <h2>Burung Cendrawasih</h2>
+                <p>Burung Cendrawasih, atau Burung Surga, adalah kelompok burung yang ditemukan di Indonesia bagian timur (Papua), Papua Nugini, dan Australia. Jantan dikenal dengan bulu yang sangat indah dan tarian kawin yang spektakuler. Mereka dilindungi karena perburuan dan hilangnya habitat.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Copyright &copy; Tiurma Taqiyyahafizh 2025</p>
+        </div>
+    </div>
+</body>
+</html>

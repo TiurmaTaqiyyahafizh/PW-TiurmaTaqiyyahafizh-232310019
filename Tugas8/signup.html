@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Akun Baru</title>
+    <style>
+        /* Gaya CSS yang sama seperti sebelumnya */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .signup-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+        .signup-container h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: bold;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .form-group input:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+        .signup-button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .signup-button:hover {
+            background-color: #0056b3;
+        }
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 5px;
+            display: block; /* Menjadikan setiap pesan kesalahan di baris baru */
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Daftar Akun Baru</h2>
+        <form id="signupForm" action="/submit-signup" method="POST">
+            <div class="form-group">
+                <label for="name">Nama Lengkap:</label>
+                <input type="text" id="name" name="name" required>
+                <span id="nameError" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <span id="emailError" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="password">Kata Sandi:</label>
+                <input type="password" id="password" name="password" required>
+                <span id="passwordError" class="error-message"></span>
+            </div>
+            <button type="submit" class="signup-button">Daftar</button>
+        </form>
+    </div>
+
+    <script>
+        const signupForm = document.getElementById('signupForm');
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+
+        const nameError = document.getElementById('nameError');
+        const emailError = document.getElementById('emailError');
+        const passwordError = document.getElementById('passwordError');
+
+        signupForm.addEventListener('submit', function(event) {
+            // Mencegah pengiriman formulir default
+            event.preventDefault();
+            let isValid = true;
+
+            // Reset pesan kesalahan
+            nameError.textContent = '';
+            emailError.textContent = '';
+            passwordError.textContent = '';
+
+            // Validasi Nama
+            const nameValue = nameInput.value.trim();
+            if (nameValue === '') {
+                nameError.textContent = 'Nama tidak boleh kosong.';
+                isValid = false;
+            } else if (nameValue.length < 10) {
+                nameError.textContent = 'Nama minimal 10 karakter.';
+                isValid = false;
+            } else if (nameValue.length > 100) {
+                nameError.textContent = 'Nama maksimal 100 karakter.';
+                isValid = false;
+            }
+
+            // Validasi Email
+            const emailValue = emailInput.value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regex dasar untuk format email
+            if (emailValue === '') {
+                emailError.textContent = 'Email tidak boleh kosong.';
+                isValid = false;
+            } else if (!emailRegex.test(emailValue)) {
+                emailError.textContent = 'Format email tidak valid.';
+                isValid = false;
+            }
+
+            // Validasi Kata Sandi
+            const passwordValue = passwordInput.value; // Tidak perlu trim untuk password
+            if (passwordValue === '') {
+                passwordError.textContent = 'Kata Sandi tidak boleh kosong.';
+                isValid = false;
+            } else if (passwordValue.length < 8) {
+                passwordError.textContent = 'Kata Sandi minimal 8 digit.';
+                isValid = false;
+            } else if (passwordValue.length > 12) {
+                passwordError.textContent = 'Kata Sandi maksimal 12 digit.';
+                isValid = false;
+            }
+
+            // Jika semua validasi berhasil, kirim formulir
+            if (isValid) {
+                this.submit(); // Kirim formulir secara manual
+                alert('Formulir valid! Mengirim data...');
+                // Di sini Anda bisa menambahkan logika AJAX untuk mengirim data tanpa refresh halaman
+            }
+        });
+    </script>
+</body>
+</html>

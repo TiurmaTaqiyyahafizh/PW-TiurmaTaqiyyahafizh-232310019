@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan HTML Terakhir - Bikin Tabel!</title>
+    <style>
+        /* Kasih sedikit styling dasar biar tabelnya nggak kelihatan polos banget. */
+        /* Ini pakai CSS, meskipun tugasnya HTML, tapi biar enak dilihatnya. */
+        table {
+            width: 85%; /* Atur lebar tabel, biar nggak kekecilan atau kegedean */
+            border-collapse: collapse; /* Penting nih biar garis bordernya nyatu, nggak dobel-dobel */
+            margin: 20px auto; /* Kasih jarak atas bawah, sama bikin dia di tengah halaman */
+            font-family: Arial, sans-serif; /* Ganti font biar lebih enak dibaca */
+        }
+        th, td {
+            border: 1px solid #c0c0c0; /* Garis border buat setiap sel, warna abu-abu tipis */
+            padding: 10px; /* Jarak teks dari pinggir sel, biar nggak dempet */
+            text-align: left; /* Teksnya rata kiri aja biar seragam */
+        }
+        th {
+            background-color: #e0e0e0; /* Warna latar belakang buat header tabel, biar beda */
+            font-weight: bold; /* Teks header dibikin tebal */
+        }
+        tr:nth-child(even) { /* Ini buat kasih warna selang-seling di baris ganjil/genap */
+            background-color: #f9f9f9; /* Biar lebih gampang dibaca datanya */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Data Sifat Fisika Oksigen (Coba Bikin Tabel)</h1>
+
+    <p>
+        Oke, latihan terakhir untuk tugas HTML ini adalah membuat tabel.
+        Ini data tentang sifat fisika Oksigen yang harus saya masukkan ke dalam format tabel.
+        Harus teliti nih biar nggak salah baris atau kolomnya.
+    </p>
+
+    <table>
+        <thead>
+            <tr> <th>Sifat Fisika</th> <th>Oksigen</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Massa atom relative</td>
+                <td>15.994</td>
+            </tr>
+            <tr>
+                <td>Nomor Atom</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>Konfigurasi electron</td>
+                <td>1s<sup>2</sup>2s<sup>2</sup>2p<sup>4</sup></td>
+            </tr>
+            <tr>
+                <td>Jari-jari atom (nm)</td>
+                <td>0.074</td>
+            </tr>
+            <tr>
+                <td>Jari-jari X<sup>-</sup> (nm)</td>
+                <td>0.140</td>
+            </tr>
+            <tr>
+                <td>Keelektronegatan</td>
+                <td>3.5</td>
+            </tr>
+            <tr>
+                <td>Energi ionisasi I (kJ/mol)</td>
+                <td>1316</td>
+            </tr>
+            <tr>
+                <td>Energi ionisasi II (kJ/mol)</td>
+                <td>3396</td>
+            </tr>
+            <tr>
+                <td>Kerapatan (g/cm<sup>3</sup>)</td>
+                <td>1.27 (padatan)</td>
+            </tr>
+            <tr>
+                <td>Titik leleh (&deg;C)</td>
+                <td>+183</td>
+            </tr>
+            <tr>
+                <td>Titik beku (&deg;C)</td>
+                <td>-219</td>
+            </tr>
+            <tr>
+                <td>Potensi elektroda (V)</td>
+                <td>+0.401</td>
+            </tr>
+            <tr>
+                <td>X<sub>(aq)</sub>+2e<sup>-</sup> &#8652; O<sub>2(aq)</sub></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        Fiuh, akhirnya tabelnya selesai juga! Ternyata butuh kesabaran ekstra buat masukin semua datanya satu per satu.
+        Yang penting strukturnya benar: ada `table`, `thead`, `tbody`, `tr`, `th`, dan `td`.
+        Lumayan lah hasilnya, apalagi udah dikasih sedikit CSS biar lebih rapi.
+        Tiga latihan HTML dasar udah kelar semua! Sekarang tinggal di-push ke GitHub.
+    </p>
+
+</body>
+</html>

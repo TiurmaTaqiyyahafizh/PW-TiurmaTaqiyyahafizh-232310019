@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan HTML Terakhir - Tabel Karir & Iframes</title>
+    <style>
+        /* Styling dasar buat halaman biar rapi dan enak dilihat */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 900px; /* Lebar halaman biar nggak terlalu sempit */
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1, h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        p {
+            margin-bottom: 1em;
+            text-align: justify;
+        }
+
+        /* Styling khusus untuk tabel "Programming Language Base on Career" */
+        table {
+            width: 100%; /* Tabelnya biar lebar penuh */
+            border-collapse: collapse; /* Garis border nyatu */
+            margin: 20px 0; /* Jarak atas bawah tabel */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Kasih efek bayangan biar keren */
+        }
+        table thead th {
+            background-color: #4CAF50; /* Warna hijau untuk header */
+            color: white; /* Teks putih */
+            padding: 12px 8px; /* Padding di header */
+            text-align: center; /* Teks di tengah */
+        }
+        table tbody td {
+            background-color: #f8f8f8; /* Warna latar belakang sel data */
+            border: 1px solid #ddd; /* Garis border tipis */
+            padding: 10px 8px; /* Padding di sel data */
+            text-align: center; /* Teks di tengah juga */
+            vertical-align: top; /* Konten di sel rata atas */
+        }
+        table tbody td ul {
+            list-style: none; /* Hilangin bullet point default */
+            padding: 0;
+            margin: 0;
+        }
+        table tbody td ul li {
+            padding: 3px 0;
+            border-bottom: 1px dashed #eee; /* Garis putus-putus antar item list */
+        }
+        table tbody td ul li:last-child {
+            border-bottom: none; /* Hilangin garis di item terakhir */
+        }
+
+        /* Styling untuk iframe */
+        .iframe-container {
+            margin: 40px 0;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+        }
+        iframe {
+            width: 100%; /* Iframe lebarnya penuh */
+            height: 600px; /* Tinggi iframe bisa disesuaikan */
+            border: none; /* Hilangin border default iframe */
+            margin-top: 10px;
+        }
+        .iframe-label {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            display: block;
+            text-align: center;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Latihan HTML 5: Tabel Berdasarkan Karir & Menyisipkan Halaman</h1>
+
+    <p>
+        Oke, ini dia tantangan terakhir dari tugas HTML ini!
+        Pertama, saya harus bikin tabel yang mengkategorikan bahasa pemrograman berdasarkan bidang karir.
+        Terus, ada bagian iframe juga, ini menarik banget, bisa nampilin halaman web lain di dalam halaman kita.
+        Mari kita mulai!
+    </p>
+
+    <h2>Programming Language Based on Career</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Front-end Web Development</th>
+                <th>Back-end Web Development</th>
+                <th>Mobile Development</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <ul>
+                        <li>JavaScript</li>
+                        <li>Elm</li>
+                        <li>TypeScript</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>JavaScript</li>
+                        <li>Scala</li>
+                        <li>Go</li>
+                        <li>Ruby</li>
+                        <li>Python</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>JavaScript</li>
+                        <li>Java</li>
+                        <li>Objective C</li>
+                        <li>Swift</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        Tabelnya sudah jadi! Lumayan rapi nih, meskipun datanya cuma contoh.
+        Pentingnya bikin tabel kayak gini biar informasi terstruktur dan gampang dibaca.
+        Selanjutnya, bagian iframe nih, ini yang agak baru buat saya.
+    </p>
+
+    <div class="iframe-container">
+        <span class="iframe-label">Ini iframe yang memanggil Latihan 4 (Artikel "The 10 Most Popular Programming Languages")</span>
+        <iframe src="latihan4.html" title="Artikel Top 10 Bahasa Pemrograman"></iframe>
+        <p>
+            Keren! Ternyata `iframe` bisa memanggil file HTML yang sudah kita buat sendiri.
+            Jadi, isi artikel Latihan 4 yang tadi itu sekarang bisa muncul di sini.
+            Kayak punya jendela ke halaman lain gitu ya.
+        </p>
+    </div>
+
+    <div class="iframe-container">
+        <span class="iframe-label">Ini iframe yang memanggil List of Programming Languages dari Wikipedia</span>
+        <iframe src="https://en.wikipedia.org/wiki/List_of_programming_languages" title="List of Programming Languages from Wikipedia"></iframe>
+        <p>
+            Nah, kalau yang ini `iframe` dari website eksternal, Wikipedia!
+            Lumayan seru juga, bisa langsung nampilin konten dari luar tanpa harus ninggalin halaman kita.
+            Tapi harus hati-hati juga pakai ini, nggak semua website mengizinkan kontennya di-embed lewat iframe.
+            Untungnya Wikipedia boleh.
+        </p>
+    </div>
+
+    <p>
+        Oke, semua bagian dari Latihan 5 sudah selesai dikerjakan!
+        Mulai dari bikin tabel multi-kolom sampai mainan `iframe` untuk nampilin halaman lokal dan eksternal.
+        Ini bener-bener pelajaran yang nambah ilmu HTML saya.
+        Sekarang tinggal dicek lagi dan siap buat disubmit.
+    </p>
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Data Mahasiswa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="number"],
+        textarea,
+        select {
+            width: calc(100% - 22px); /* Adjusting for padding and border */
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+            font-size: 16px;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .radio-group label {
+            display: inline-block;
+            margin-right: 15px;
+            font-weight: normal;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+            width: 100%;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #output {
+            margin-top: 30px;
+            padding: 20px;
+            border: 1px dashed #ccc;
+            border-radius: 8px;
+            background-color: #e9e9e9;
+            display: none; /* Hidden by default */
+        }
+        #output p {
+            margin: 5px 0;
+            line-height: 1.6;
+        }
+        #output strong {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Form Data Mahasiswa</h2>
+        <form id="dataForm">
+            <div class="form-group">
+                <label for="nim">NIM:</label>
+                <input type="number" id="nim" name="nim" required>
+            </div>
+
+            <div class="form-group">
+                <label for="nama">Nama:</label>
+                <input type="text" id="nama" name="nama" required>
+            </div>
+
+            <div class="form-group">
+                <label>Jenis Kelamin:</label>
+                <div class="radio-group">
+                    <input type="radio" id="pria" name="jenisKelamin" value="Pria" required>
+                    <label for="pria">Pria</label>
+                    <input type="radio" id="wanita" name="jenisKelamin" value="Wanita">
+                    <label for="wanita">Wanita</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="agama">Agama:</label>
+                <select id="agama" name="agama" required>
+                    <option value="">Pilih Agama</option>
+                    <option value="Islam">Islam</option>
+                    <option value="Kristen Protestan">Kristen Protestan</option>
+                    <option value="Kristen Katolik">Kristen Katolik</option>
+                    <option value="Hindu">Hindu</option>
+                    <option value="Buddha">Buddha</option>
+                    <option value="Konghucu">Konghucu</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="status">Status:</label>
+                <select id="status" name="status" required>
+                    <option value="">Pilih Status</option>
+                    <option value="Mahasiswa Aktif">Mahasiswa Aktif</option>
+                    <option value="Cuti">Cuti</option>
+                    <option value="Lulus">Lulus</option>
+                    <option value="Non-aktif">Non-aktif</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="jurusan">Jurusan:</label>
+                <input type="text" id="jurusan" name="jurusan" required>
+            </div>
+
+            <div class="form-group">
+                <label for="komentar">Komentar:</label>
+                <textarea id="komentar" name="komentar"></textarea>
+            </div>
+
+            <button type="submit">KIRIM</button>
+        </form>
+
+        <div id="output">
+            <h3>Data yang Diinput:</h3>
+            <p><strong>NIM:</strong> <span id="outputNim"></span></p>
+            <p><strong>Nama:</strong> <span id="outputNama"></span></p>
+            <p><strong>Jenis Kelamin:</strong> <span id="outputJenisKelamin"></span></p>
+            <p><strong>Agama:</strong> <span id="outputAgama"></span></p>
+            <p><strong>Status:</strong> <span id="outputStatus"></span></p>
+            <p><strong>Jurusan:</strong> <span id="outputJurusan"></span></p>
+            <p><strong>Komentar:</strong> <span id="outputKomentar"></span></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('dataForm').addEventListener('submit', function(event) {
+            // Mencegah form untuk refresh halaman
+            event.preventDefault();
+
+            // Mengambil nilai dari setiap input
+            const nim = document.getElementById('nim').value;
+            const nama = document.getElementById('nama').value;
+            const jenisKelamin = document.querySelector('input[name="jenisKelamin"]:checked') ? document.querySelector('input[name="jenisKelamin"]:checked').value : 'Tidak dipilih';
+            const agama = document.getElementById('agama').value;
+            const status = document.getElementById('status').value;
+            const jurusan = document.getElementById('jurusan').value;
+            const komentar = document.getElementById('komentar').value;
+
+            // Menampilkan nilai di bagian output
+            document.getElementById('outputNim').textContent = nim;
+            document.getElementById('outputNama').textContent = nama;
+            document.getElementById('outputJenisKelamin').textContent = jenisKelamin;
+            document.getElementById('outputAgama').textContent = agama;
+            document.getElementById('outputStatus').textContent = status;
+            document.getElementById('outputJurusan').textContent = jurusan;
+            document.getElementById('outputKomentar').textContent = komentar;
+
+            // Menampilkan div output
+            document.getElementById('output').style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>
